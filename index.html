@@ -1,72 +1,73 @@
-<!-- 主要分为纪念日，照片，日志，未来模块<h1 style="font-family: 'KaiTi';text-align:center;font-size: 50px;">鲁小霖和吴小贤的故事</h1>
-<hr>
-<p style="font-family: 'SimHei';font-size:30px;"> 物以稀为贵，爱以诚为久~</p> -->
 <!DOCTYPE html>
-<html lang="zh">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鲁小小和吴小小的故事</title>
-    <style>
-        body {
-            line-height: 1.6;
-            /* 设置行高 */
-            margin: 20px;
-        }
+	<meta charset="UTF-8">
+	<title>OuO</title>
+ 	<link rel="icon" href="/Troll1.png" type="image/png">
+<style>
+html,body {
+margin: 0;
+width: 100%;
+height: 100%;
+}
 
-        h1 {
-            font-family: 'KaiTi';
-            text-align: center;
-            font-size: 50px;
-        }
+#main {
+position: fixed;
+top: 0;
+left: 0;
+}
+	
+#video1 {
+width: 100%;
+height: 100%;
+}
 
-        h2 {
-            font-family: SimHei;
-            text-align: center;
-            font-size: 45px;
-        }
+.hidden {
+display: none;
+}
+</style>
+
+	</head>
+
+	<body id="app">
+		<div id="main">
+			<video id="video1" muted="muted" autoplay="autoplay" loop="loop" src="./chrismas.mp4">
+			</video>
+			<audio id="music1" autostart="true" loop="loop" preload="auto" controls hidden="true">
+				<source src="./shengdanjie.mp3"></source>
+			</audio>
+
+		</div>
 
 
-        p {
-            font-family: 'SimHei';
-            font-size: 28px;
-            text-indent: 2em;
-            /* 设置段落首行缩进 */
-            margin-top: 1em;
-            /* 每段前空一行 */
-        }
-    </style>
-</head>
+	</body>
+	<script type="text/javascript">
+		var video = document.getElementById("video1");
+		video.playbackRate *= 0.8;
+		video.play();
+		$(function() {
+			
+			// music.play();
+		});
+	</script>
+	<script>
+		var myAuto = document.getElementById('music1');
+		var app = document.getElementById("app");
+		// 监听事件
+		app.addEventListener("mousemove", function() {
+			console.log("played");
+			myAuto.play();
+		}, true);
 
-<body>
-    <h1>鲁小小和吴小小的故事</h1>
-    <hr>
-    <p>物以稀为贵，爱以诚为久~</p>
-    <p>有心才能同行，有爱才能共鸣~</p>
-    <p>一份深情，需要时光的沉淀；一份陪伴，需要一生的执着~</p>
-    <p>缘分让我们相遇，珍惜让彼此靠近，理解与包容让爱情绽放出最美的花~</p>
-    <p>爱，是风雨同行后的笑容，是日子平淡中的珍惜~</p>
-    <p>我们拥有的，不是永远的完美，而是携手面对风雨的决心~</p>
-    <hr>
-    <h2>我们的纪念日</h2>
-    <p>2024年10月17日0：39 我们第一次聊天 2024年11月03日，我们第一次相见~ </p>
-    <p>2024年11月5日 我们第一次约会</p>
-    <p>2024年11月5日 我们第一次一起用餐</p>
-    <p>2024年11月5日 我们第一次牵手</p>
-    <p>2024年11月5日 我们第一次送花</p>
-    <p>2024年11月9日 我们第一次送礼物</p>
-    <p>2024年11月12日 我们第一次看电影</p>
-    <p>2024年11月16日 我们第一次去游乐场</p>
-    <p>2024年11月16日 我们第一次坐摩天轮</p>
-    <p>2024年11月21日 我们第一次亲吻</p>
-    <p>2024年12月8日 我们第一次合影</p>
-    <p>2024年12月12日 我们第一次紧紧拥抱</p>
-    <p>2024年12月29日 我们第一次逛街</p>
-    <p>2024年12月30日 我们第一次写情书</p>
-    <hr>
-    <img src="IMG_9854.jpeg" alt="南京眼" />
-
-</body>
-
+		// 用定时器触发事件
+		setInterval(function() {
+			if ("createEvent" in document) {
+				var evt = document.createEvent("HTMLEvents");
+				evt.initEvent("mousemove", false, true);
+				app.dispatchEvent(evt);
+			} else{
+				app.fireEvent("onmousemove");
+			}
+		}, 1000);
+	</script>
 </html>
